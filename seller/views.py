@@ -19,7 +19,7 @@ def sendotp(request):
         for i in range(6):
             otp += string[math.floor(random.random() * length)]
         mesg = 'please login with this OTP :' + otp
-        # smsinfo = sendSMS(mobile_no,mesg)
+        # smsinfo = sendSMS(mobile_no,mesg) uncommnet this after replacing sms API
         # print(smsinfo)
         print(mesg)
         return render(request,'Seller Templates/otp_validation.html',{'data':mobile_no})
