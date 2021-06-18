@@ -1,0 +1,27 @@
+{% include 'head.html' %}
+{% include 'Seller Templates/user_menu.html' %}
+
+
+
+<center>
+    {% if store_data %}
+        <table border="1">
+            <tr>
+                <th>Store ID</th>
+                <th>Name</th>
+                <th>Mail Id</th>
+                <th>Contact Number</th>
+                <th>Address</th>
+            </tr>
+            {% for i in store_data %}
+                <tr>
+                    <td>{{ i.id }}</td>
+                    <td>{{ i.name | title }}</td>
+                    <td>{{ i.mail | lower }}</td>
+                    <td>{{ i.number }}</td>
+                    <td>{{ i.address | title }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+</center>

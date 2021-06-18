@@ -1,0 +1,30 @@
+{% include 'head.html' %}
+{% include 'menu.html' %}
+
+<center>
+    <table>
+        {% if data %}
+            {{ data }}
+        {% endif %}
+        <form action="{% url 'single_store' %}" method="post">
+            {% csrf_token %}
+            <tr>
+                <td><label for="your_name">Enter store name :</label></td>
+                <td><input id="your_name" type="text" required placeholder="store name" name="store_name"></td>
+            </tr>
+            <tr>
+                <td>
+
+                </td>
+                <td>
+                    <button type="submit">
+                        Search
+                    </button>
+                    <button type="reset">
+                        Clear
+                    </button>
+                </td>
+            </tr>
+        </form>
+    </table>
+</center>

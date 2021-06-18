@@ -1,0 +1,43 @@
+{% include 'head.html' %}
+{% include 'menu.html' %}
+
+<br>
+<br>
+<br>
+<center>
+    <form action="{% url 's_login' %}" method="post">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>
+                    Mobile Number :
+                </td>
+                <td>
+                    <input type="text" name="mobile" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Enter password :
+                </td>
+                <td>
+                    <input type="password" name="pswd" required>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td style="alignment: right">
+                    <button type="reset">
+                        Reset
+                    </button>
+                    <button type="submit">
+                        Login
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    {% if data %}
+        {{ data }}
+    {% endif %}
+</center>
